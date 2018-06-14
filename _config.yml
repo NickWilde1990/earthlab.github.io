@@ -53,6 +53,11 @@ analytics:
 google_ad_client         :
 google_ad_slot           :
 
+# Search items
+search                   : true # true, false (default)
+google:
+  search_engine_id: 009878393705905880463:ovlxxcvw4k0
+
 
 # Site Author
 author:
