@@ -8,7 +8,7 @@ class-lesson: ['numpy-arrays']
 permalink: /courses/earth-analytics-bootcamp/numpy-arrays/intro-numpy-arrays/
 nav-title: "Intro to Numpy Arrays"
 dateCreated: 2018-07-23
-modified: 2018-08-05
+modified: 2018-08-11
 module-title: 'Numpy Arrays'
 module-nav-title: 'Numpy Arrays'
 module-description: 'This tutorial teaches you to work with a commonly used data structure in Python for scientific data: numpy arrays.'
@@ -65,26 +65,25 @@ In this course, you will also work with two additional complex data structures f
 
 `Numpy arrays` can store data using both rows and columns that are relative to each other, resulting in dimensionality contained within this data structure. This dimensionality makes `numpy arrays` very efficient for storing large amounts of data of the same type and characteristic.
 
-`Numpy arrays` can be one-dimensional, meaning that they contain values only as rows but not columns or vice versa, or they can be multi-dimensional with multiple rows and columns. In `numpy arrays`, brackets `[]` are used to assign the dimensions of the `numpy array`. 
+`Numpy arrays` can be one-dimensional, meaning that they contain values along one dimension similar to a `Python` list, or they can be multi-dimensional with multiple rows and columns. 
+
+In `numpy arrays`, brackets `[]` are used to assign the dimensions of the `numpy array`. 
 
 ```python
-# one-dimensional numpy array of monthly average precipitation for January through March in Boulder, CO
-# dimensions are 3 rows, no columns 
+# example of one-dimensional numpy array of monthly average precipitation for January through March in Boulder, CO
 precip = numpy.array([0.70, 0.75, 1.85])
 ```
 
 ```python
-# two-dimensional numpy array of January through March precipitation in Boulder, CO for two years: 2002 and 2013
+# example of two-dimensional numpy array of January through March precipitation in Boulder, CO for two years: 2002 and 2013
 # dimensions are 2 rows, 3 columns
 precip = np.array([ [1.07, 0.44, 1.50], 
                  [0.27, 1.13, 1.72] ])
 ```
 
-This also means that indexing for `numpy arrays` requires two values identifying the location of an element within the `numpy array`: the row number and the column number. 
+This means that indexing for two-dimensional `numpy arrays` requires two values identifying the location of an element within the `numpy array`: the row number and the column number. 
 
-All elements in `numpy array` have a specified row index and column index. If the `numpy array` is one dimensional, then one of these values will be null. 
-
-In this course, you will work with one and two dimensional `numpy arrays`. In the lessons that follow, you will learn how you can use indexing to access data in one and two dimensional `numpy arrays`.  
+In this course, you will work with one and two dimensional `numpy arrays`, and in the lessons that follow, you will learn how you can use indexing to access data in one- and two-dimensional `numpy arrays`.  
 
 
 ## Key Differences Between Python Lists and Numpy Arrays
@@ -97,6 +96,6 @@ While `Python` lists and `numpy arrays` have similarities in that they are both 
 
 3. Unlike a `Python` list, a `numpy array` is not edited by adding/removing/replacing elements in the array. Instead, the `numpy array` is deleted and recreated each time that it is manipulated.
 
-4. `Numpy arrays` have dimensionality resulting from the ability to store data using both rows and columns that are relative to each other, while `Python` lists are considered non-dimensional data structures. 
+4. `Numpy arrays` have dimensionality resulting from the ability to store data using both rows and columns that are relative to each other.
 
 In the lessons that follow, you will review these features of `numpy arrays` and learn why `numpy arrays` are a useful data structure for scientific data. 

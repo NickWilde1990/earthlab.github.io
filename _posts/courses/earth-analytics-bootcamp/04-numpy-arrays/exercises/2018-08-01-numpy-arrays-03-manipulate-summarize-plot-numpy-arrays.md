@@ -8,7 +8,7 @@ class-lesson: ['numpy-arrays']
 permalink: /courses/earth-analytics-bootcamp/numpy-arrays/manipulate-summarize-plot-numpy-arrays/
 nav-title: "Manipulate, Summarize and Plot Numpy Arrays"
 dateCreated: 2019-07-23
-modified: 2018-08-07
+modified: 2018-08-13
 module-type: 'class'
 class-order: 2
 course: "earth-analytics-bootcamp"
@@ -52,31 +52,29 @@ The code below is available in the **ea-bootcamp-day-4** repository that you clo
 
 In the lessons on lists, you learned that `Python` indexing begins with `[0]`, and that you can use indexing to query the value of items within `Python` lists.
 
-You have also learned that to access elements in `numpy arrays` using indexing, you need to provide two input parameters for the index: the row number and the column number. 
-
-For example, you can use the query structure `arrayname[rowindex, columnindex]` to select values at a specific row and column intersection. 
+You can also access elements (i.e. values) in `numpy arrays` using indexing. 
 
 
 ### One-dimensional Numpy Arrays
 
-For one-dimensional `numpy arrays` that have only rows, you only need to specific the row index, while the column index is null (e.g.  `arrayname[rowindex,]`). 
+For one-dimensional `numpy arrays`, you only need to specific one index value to access the elements in the `numpy array` (e.g.  `arrayname[index,]`). 
 
-The opposite is true for one-dimensional `numpy arrays` that have only columns (e.g.  `arrayname[, columnindex]`).
-
-The example below is an one-dimensional array with 3 rows but no columns (i.e. a null column index). 
+The example below is an one-dimensional array that has 3 elements, or values. 
 
 ```python
 avg_monthly_precip = numpy.array([0.70, 0.75, 1.85])
 ```
 
-You can use `avg_monthly_precip[2,]` to get the third element in (`1.85`) from this one-dimensional `numpy array` with only rows. You use the index `[2]` for the third place because `Python` indexing begins with `[0]`, not with `[1]`.
+You can use `avg_monthly_precip[2,]` to get the third element in (`1.85`) from this one-dimensional `numpy array`. 
+
+Recall that you are using use the index `[2]` for the third place because `Python` indexing begins with `[0]`, not with `[1]`.
 
 
 ### Two-dimensional Numpy Arrays
 
 With two-dimensional arrays, you need to specify to both a row index and a column index. 
 
-The example below is an two-dimensional array with 2 rows and 3 columns. 
+The example below is a two-dimensional array with 2 rows and 3 columns. 
 
 ```python
 precip_2002_2013 = numpy.array([[1.07, 0.44, 1.5],
@@ -108,7 +106,7 @@ To work with `numpy arrays`, you will also need to import the `numpy` package wi
 # import necessary Python packages
 import os
 import numpy as np
-import urllib
+import urllib.request
 import matplotlib.pyplot as plt
 
 # print message after packages imported successfully
@@ -226,7 +224,7 @@ print(precip_2002_2013.shape)
 
 
 
-The output for `avg_monthly_precip` indicates that it is composed of 12 rows and no columns. In fact, this `numpy arrays` is one-dimensional, meaning that all values exist within a single vector or list. 
+The output for `avg_monthly_precip` indicates that it is composed of 12 elements along one-dimension. In fact, this `numpy arrays` is one-dimensional, meaning that all values exist within a single vector or list. 
 
 The output for `precip_2002_2013` indicates that it is composed of 2 rows and 12 columns. This is two-dimensional `numpy array` that has two observations - one for the year 2002 and another for the year 2013 - and 12 measurements for observation - one for each month of the year. 
 
@@ -235,15 +233,15 @@ The output for `precip_2002_2013` indicates that it is composed of 2 rows and 12
 
 ### One-dimensional Numpy Arrays
 
-By listing the dimensions of `avg_monthly_precip` using `.shape`, you know that its row count is 12, while the column count is null. 
+By listing the dimensions of `avg_monthly_precip` using `.shape`, you know that it contains 12 elements along one dimension (e.g. `[12,]`). 
 
-As this `numpy array` is one-dimensional without columns, you can leave the second parameter blank when use indexing to access elements in this `numpy array` (e.g. `precip[X,]`). 
+As this `numpy array` is one-dimensional, you can leave the second parameter blank when use indexing to access elements in this `numpy array` (e.g. `precip[X,]`). 
 
 For example, because indexing in `Python` begins with `[0]`, you can use the index `[11,]` to query the last element in `avg_monthly_precip`.
 
 {:.input}
 ```python
-# select the last item in `avg_monthly_precip` using the index [11,]
+# select the last element in `avg_monthly_precip` using the index [11,]
 avg_monthly_precip[11,]
 ```
 
@@ -277,9 +275,31 @@ avg_monthly_precip[11,]
 
 
 
+You can also select a series of values from one-dimensional `numpy arrays` such as the third, fourth and fifth values. 
+
+Note that the index structure is inclusive of the first index value, but not the second index value. You are providing a start index value for the selection and an end index value that is not included in the selection.
+
+{:.input}
+```python
+avg_monthly_precip[2:5]
+```
+
+{:.output}
+{:.execute_result}
+
+
+
+    array([1.85, 2.93, 3.05])
+
+
+
+
+
+### Two-dimensional Numpy Arrays
+
 Using `.shape`, you also saw that `precip_2002_2013` has row count of 2 with a column count of 12. 
 
-Because `precip_2002_2013` is a multi-dimensional `numpy array`, you need to specify both a row index and a column index to select elements in the `numpy array` 
+Because `precip_2002_2013` is a two-dimensional `numpy array`, you need to specify both a row index and a column index to select elements in the `numpy array` 
 
 For example, because indexing in `Python` begins with `[0]`, you can use the index `[0,0]` to query the first element in `precip_2002_2013` (i.e. first row, first column).
 
@@ -319,11 +339,9 @@ precip_2002_2013[1,11]
 
 
 
-### Two-dimensional Numpy Arrays
+For two-dimensional `numpy arrays`, you can also use a series for the row index and/or column index to select multiple elements using the index structure `[rowindex : rowindex, columnindex : columnindex]`.
 
-For multi-dimensional `numpy arrays`, you can also use a series for the row index and/or column index to select multiple elements using the index structure `[rowindex : rowindex, columnindex : columnindex]`.
-
-The index structure is inclusive of the first index, but not the second index. 
+Like with the one-dimensional arrays, the index structure is inclusive of the first index, but not the second index. Again, you are providing a start index value for the selection and an end index value that is not included in the selection.
 
 For example, you can use the index `[0:1, 0:3]` to select the first row and the first three columns (again because `Python` indexing begins with `[0]`). 
 
@@ -349,7 +367,7 @@ If you wanted to include the second row and fourth column, you would need to use
 {:.input}
 ```python
 # select the first two rows and the first four columns
-precip_2002_2013[0:2, 0:3]
+precip_2002_2013[0:2, 0:4]
 ```
 
 {:.output}
@@ -357,8 +375,8 @@ precip_2002_2013[0:2, 0:3]
 
 
 
-    array([[1.07, 0.44, 1.5 ],
-           [0.27, 1.13, 1.72]])
+    array([[1.07, 0.44, 1.5 , 0.2 ],
+           [0.27, 1.13, 1.72, 4.14]])
 
 
 
@@ -506,7 +524,7 @@ Since you have now completed an easy calculation to convert the precipitation va
 
 In order to use multiple `numpy arrays` within the same plot, you need to make sure that the dimensions of the arrays are compatible. 
 
-You have already done this by checking the `.shape` of `avg_monthly_precip` and `months`, which indicates that both have 12 rows and no columns (`(12,)`). 
+You have already done this by checking the `.shape` of `avg_monthly_precip` and `months`, which indicates that both have 12 elements along one dimension (`(12,)`). 
 
 You can re-use your `matplotlib` code from the lesson on plotting with matplotlib to create the same plot of average monthly precipitation in Boulder, CO using `numpy arrays`. Recall that you can set the `color` in the plot (e.g. `grey`).
 
@@ -531,12 +549,14 @@ ax.set(xlabel="Month", ylabel="Precipitation (mm)");
 {:.output}
 {:.display_data}
 
-![png]({{ site.url }}//images/courses/earth-analytics-bootcamp/04-numpy-arrays/exercises/2018-08-01-numpy-arrays-03-manipulate-summarize-plot-numpy-arrays_37_0.png)
+![png]({{ site.url }}//images/courses/earth-analytics-bootcamp/04-numpy-arrays/exercises/2018-08-01-numpy-arrays-03-manipulate-summarize-plot-numpy-arrays_39_0.png)
 
 
 
 
-Note that `precip_2002` is still two dimensional array, so you cannot use it to plot data against `months`. In future lessons, you will learn how to convert two-dimensional `numpy arrays` to one-dimensional `numpy arrays`. 
+Note that `precip_2002` is still two dimensional array, so you cannot use it to plot data against `months`, which is a one-dimensional array.
+
+In future lessons, you will learn how to convert two-dimensional `numpy arrays` to one-dimensional `numpy arrays`. 
 
 Congratulations! You have learned how to use indexing to select data from one-dimensional and two-dimensional `numpy arrays`, and how to run calculations and summary statistics on these `numpy arrays`. You also learned how to plot data from one-dimensional `numpy arrays`. 
 

@@ -2,13 +2,13 @@
 layout: single
 title: 'Manipulate and Plot Pandas Dataframes'
 excerpt: "This lesson walks you through describing, manipulating, and plotting pandas dataframes."
-authors: ['Jenny Palomino', 'Software Carpentry', 'Pandas']
+authors: ['Jenny Palomino', 'Software Carpentry']
 category: [courses]
 class-lesson: ['pandas-dataframes']
 permalink: /courses/earth-analytics-bootcamp/pandas-dataframes/manipulate-plot-pandas-dataframes/
 nav-title: "Manipulate and Plot Pandas Dataframes"
 dateCreated: 2019-07-24
-modified: 2018-08-07
+modified: 2018-08-10
 module-type: 'class'
 class-order: 2
 course: "earth-analytics-bootcamp"
@@ -88,7 +88,7 @@ To work with `pandas dataframes`, you will also need to import the `pandas` pack
 ```python
 # import necessary Python packages
 import os
-import urllib
+import urllib.request
 import pandas as pd
 import matplotlib.pyplot as plt
 

@@ -2,13 +2,13 @@
 layout: single
 title: 'Import CSV Files Into Pandas Dataframes'
 excerpt: "This lesson walks you through importing tabular data from .csv files to pandas dataframes."
-authors: ['Jenny Palomino', 'Software Carpentry', 'Pandas']
+authors: ['Jenny Palomino', 'Software Carpentry']
 category: [courses]
 class-lesson: ['pandas-dataframes']
 permalink: /courses/earth-analytics-bootcamp/pandas-dataframes/import-csv-files-pandas-dataframes/
 nav-title: "Import CSV Files Into Pandas Dataframes"
 dateCreated: 2019-07-24
-modified: 2018-08-07
+modified: 2018-08-10
 module-type: 'class'
 class-order: 2
 course: "earth-analytics-bootcamp"
@@ -104,7 +104,7 @@ To work with `pandas dataframes`, you will also need to import the `pandas` pack
 ```python
 # import necessary Python packages
 import os
-import urllib
+import urllib.request
 import pandas as pd
 
 # print message after packages imported successfully
@@ -151,7 +151,7 @@ For this lesson, you will download a .csv file containing the average monthly pr
 ```python
 # use `urllib` download files from Earth Lab figshare repository
 
-# download .txt containing monthly average precipitation for Boulder, CO
+# download .csv containing monthly average precipitation for Boulder, CO
 urllib.request.urlretrieve(url = "https://ndownloader.figshare.com/files/12710618", 
                            filename = "data/avg-precip-months-seasons.csv")
 

@@ -8,7 +8,7 @@ class-lesson: ['git-github-version-control']
 permalink: /courses/earth-analytics-bootcamp/git-github-version-control/guided-activity-version-control/
 nav-title: "Guided Activity on Version Control with Git/GitHub"
 dateCreated: 2018-07-25
-modified: 2018-08-05
+modified: 2018-08-09
 odule-type: 'class'
 class-order: 2
 course: "earth-analytics-bootcamp"
@@ -58,6 +58,17 @@ In this lesson, you expand on those skills to:
 * `push` those changed files from the local copy of a repository to the cloud (`Github.com`)
 
 In later lessons, you will expand on this version control workflow to notify others (your collaborators) about changes you have made and that you would like to add to the original (`master`) copy of a repository.  
+
+## Configure `Git` Settings On Your Computer:
+
+1. In the terminal, set your `Github.com` username by typing: `git config --global user.name "Your UserName"`.
+
+2. In the terminal, set the email for your `Github.com` account by typing: `git config --global user.email "youremail@email.com"`.
+
+Note that you only have to configure these settings once on your computer. You can check your config settings for user.name and user.email using the following commands:
+
+`git config user.name` or `git config user.email`
+
 
 ## Make Changes to Files and Directories
 
@@ -128,7 +139,9 @@ For example, to add the `ea-bootcamp-hw-1.ipynb` file that you just modified, yo
 
 `git add ea-bootcamp-hw-1.ipynb`.
 
-You can also add all of the files that you have edited at the same time using `git add .`.
+You can also add all of the files that you have edited at the same time using: 
+
+`git add .`
 
 However, **use `git add .` with caution**. Be sure to review the results from `git status` carefully before using `git add .`. You do not want to accidentally add files that you do not want to change in the `GitHub` repository. 
 
@@ -172,19 +185,5 @@ Rename your Homework 1 file and update it on `GitHub`!
 2. Use your new `Git` skills to `add` and `commit` the changes and then `push` the changes to your `ea-bootcamp-hw-1-yourusername` repository on `GitHub`. 
 
 3. Visit your repository on `Github.com` and see your change! What happened to the original file `ea-bootcamp-hw-1.ipynb`?
-
-</div>
-
-<div class="notice--warning" markdown="1">
-
-## <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Optional Challenge 2
-
-Configure settings for `Git` on your computer:
-
-1. In the terminal, set your `Github.com` username by typing: `git config --global user.name "Your UserName"`.
-
-2. In the terminal, set the email for your `Github.com` account by typing: `git config --global user.email "youremail@email.com"`.
-
-Now, you will not have to type in your `Github.com` username each time you run a `Git` command, or have to provide an email for `Git` commands that require them to send messages.
 
 </div>

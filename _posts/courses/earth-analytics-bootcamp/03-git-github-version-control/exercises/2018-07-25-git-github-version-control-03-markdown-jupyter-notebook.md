@@ -8,7 +8,7 @@ class-lesson: ['git-github-version-control']
 permalink: /courses/earth-analytics-bootcamp/git-github-version-control/markdown-jupyter-notebook/
 nav-title: "Markdown in Jupyter Notebook"
 dateCreated: 2018-07-25
-modified: 2018-08-03
+modified: 2018-08-09
 odule-type: 'class'
 class-order: 2
 course: "earth-analytics-bootcamp"
@@ -71,12 +71,12 @@ You also learned that can use `Markdown` to create titles and subtitles using th
 # This is the biggest title
 ## This is a subtitle
 ### This is a smaller subtitle
-#### This is an even subtitle
+#### This is an even smaller subtitle
 ```
 
 These titles are already present on this page as `Markdown` (e.g. **Markdown Styling** above is a subtitle). 
 
-In a `Jupyter Notebook` file, you can double-click in any `Markdown` cell to see the syntax, and then run the cell the again to see the `Markdown` formatting.
+In a `Jupyter Notebook` file, you can double-click in any `Markdown` cell to see the syntax, and then run the cell again to see the `Markdown` formatting.
 
 
 ### Lists
