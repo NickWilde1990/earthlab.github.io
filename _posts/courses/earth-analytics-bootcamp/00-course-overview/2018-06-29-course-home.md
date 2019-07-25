@@ -14,6 +14,9 @@ sidebar:
 comments: false
 author_profile: false
 overview-order: 1
+topics:
+  reproducible-science-and-programming: ['python']
+authors: ['Jenny Palomino', 'Leah Wasser']
 ---
 
 {% include toc title="This course" icon="file-text" %}
