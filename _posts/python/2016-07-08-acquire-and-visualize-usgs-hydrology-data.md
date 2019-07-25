@@ -11,6 +11,8 @@ author_profile: false
 comments: true
 lang: [python]
 lib: [matplotlib, climata, pandas, numpy]
+estimated_effort: 3 hours
+difficulty: easy
 ---
 
 Climata is a python package aimed at acquiring climate and water flow data from a variety of organizations including NOAA, CoCoRaHS, USBR, NWS, NRCS, and USGS. 
